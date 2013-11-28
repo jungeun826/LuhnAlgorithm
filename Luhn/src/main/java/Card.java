@@ -1,7 +1,16 @@
-
+/**
+ * 
+ * @author jungEun
+ *
+ */
 public class Card{
 	int[] card_Number = new int[16];
-
+	/**
+	 * class 내부의 card_Number의 특정 index에 들어가 있는 값을 get.
+	 * @see {@link Card}
+	 * @param cardIndex
+	 * @return
+	 */
 	public int getCard_Number(int cardIndex) {
 		return card_Number[cardIndex];
 	}

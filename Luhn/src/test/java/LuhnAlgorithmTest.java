@@ -1,22 +1,21 @@
+
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
-
-
+//롤백기능 - 테스트 전에 넣고 끝나면 빼줌........
+//@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LuhnAlgorithmTest {
 
 	private CardVerify cardVerify;
 	@Before
-	//test가 하나하나 별개->setup실행 
-	//리펙터링 재사용성 코드 따로 뺌. 중복소스 없앰
 	public void setUp() throws Exception {
 		cardVerify = new CardVerify();
 		cardVerify.cardSet("9440810003819258");
 	}
 	
 	@Test
-	public void CardNumbertest() {
+	public void CardNumberTest() {
 		assertEquals(9,cardVerify.card.getCard_Number(0));
 		assertEquals(4,cardVerify.card.getCard_Number(1));
 		assertEquals(4,cardVerify.card.getCard_Number(2));
@@ -36,7 +35,7 @@ public class LuhnAlgorithmTest {
 	}
 	
 	@Test
-	public void digitCaltest() {
+	public void digitCalTest() {
 		assertEquals(8,cardVerify.cal_digit(15, false));
 		assertEquals(1,cardVerify.cal_digit(14, true));
 		assertEquals(2,cardVerify.cal_digit(13, false));
@@ -57,7 +56,7 @@ public class LuhnAlgorithmTest {
 	
 	
 	@Test
-	public void Cardtest() {
+	public void CardTest() {
 		assertEquals(true,cardVerify.verify());
 	}
 	
